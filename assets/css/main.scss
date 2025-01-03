@@ -1,41 +1,59 @@
----
----
-
-/*
- *    Minimal Mistakes Jekyll Theme
- *
- *  - Michael Rose
- *  - mademistakes.com
- *  - https://twitter.com/mmistakes
- *
+/*!
+ * Minimal Mistakes Jekyll Theme
+ * Copyright (c) Michael Rose - https://twitter.com/mmistakes
+ * Licensed under MIT (https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE)
 */
 
-@import "vendor/breakpoint/breakpoint"; // media query mixins
+/* Variables and Mixins
+   ========================================================================== */
+@import "vendor/breakpoint/breakpoint"; // Media query mixins
 @import "variables";
 @import "mixins";
 @import "vendor/susy/susy";
 
+/* Core
+   ========================================================================== */
 @import "reset";
 @import "base";
-
 @import "utilities";
 @import "animations";
+
+/* Global Styles
+   ========================================================================== */
+body {
+  background-color: #f0f2f5;  // Sky gray background
+}
+
+/* Components 
+   ========================================================================== */
 @import "tables";
 @import "buttons";
 @import "notices";
+@import "forms";
+
+/* Layout
+   ========================================================================== */
 @import "masthead";
 @import "navigation";
 @import "footer";
-@import "syntax";
-
-@import "forms";
-
+@import "sidebar";
 @import "page";
 @import "archive";
-@import "sidebar";
 
+/* Vendor
+   ========================================================================== */
+// Font Awesome
 @import "vendor/font-awesome/fontawesome";
 @import "vendor/font-awesome/solid";
 @import "vendor/font-awesome/brands";
+
+// Magnific Popup
 @import "vendor/magnific-popup/magnific-popup";
+
+/* Syntax Highlighting
+   ========================================================================== */
+@import "syntax";
+
+/* Print Styles
+   ========================================================================== */
 @import "print";
