@@ -26,6 +26,28 @@
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
 
+/* Diagnostic styling - this will highlight different sections in different colors */
+.masthead {
+    background: #ffebee !important;
+}
+
+.initial-content {
+    background: #e3f2fd !important;
+}
+
+#main {
+    background: #e8f5e9 !important;
+}
+
+.page {
+    background: #fff3e0 !important;
+}
+
+.page__content {
+    background: #f3e5f5 !important;
+}
+
+
 /* Add these specific rules to target and remove the top spacing */
 .page {
     padding-top: 0;
