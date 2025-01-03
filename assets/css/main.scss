@@ -2,11 +2,10 @@
 ---
 
 /*
- *    Minimal Mistakes Jekyll Theme
+ *    Based on Minimal Mistakes Jekyll Theme
  *
- *  - Michael Rose
- *  - mademistakes.com
- *  - https://twitter.com/mmistakes
+ *  - edited by JESoderberg
+ *  
  *
 */
 
@@ -14,10 +13,8 @@
 @import "variables";
 @import "mixins";
 @import "vendor/susy/susy";
-
 @import "reset";
 @import "base";
-
 @import "utilities";
 @import "animations";
 @import "tables";
@@ -27,13 +24,10 @@
 @import "navigation";
 @import "footer";
 @import "syntax";
-
 @import "forms";
-
 @import "page";
 @import "archive";
 @import "sidebar";
-
 @import "vendor/font-awesome/fontawesome";
 @import "vendor/font-awesome/solid";
 @import "vendor/font-awesome/brands";
