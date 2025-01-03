@@ -2,17 +2,12 @@
    SIDEBAR
    ========================================================================== */
 
-/*
-   Default
-   ========================================================================== */
-
 .sidebar {
   -webkit-transform: translate3d(0, 0 , 0);
           transform: translate3d(0, 0 , 0);
-  background: linear-gradient(to bottom, #ffffff, #f8f9fa);
-  box-shadow: 0 4px 12px rgba(#000, 0.08);
-  border-radius: $border-radius;
-  transition: all 0.3s ease;
+  background: linear-gradient(to bottom, $body-color, $sidebar-background-color);
+  box-shadow: $box-shadow;
+  transition: $global-transition;
 
   @include clearfix();
   margin-bottom: 1em;
@@ -22,34 +17,31 @@
     overflow-y: auto;
     position: fixed;
     padding-top: $masthead-height;
-    scrollbar-width: thin;
-    scrollbar-color: $primary-color transparentize($primary-color, 0.9);
-
+    
     &::-webkit-scrollbar {
-      width: 8px;
+      width: 6px;
     }
-
+    
     &::-webkit-scrollbar-track {
-      background: transparentize($primary-color, 0.9);
-      border-radius: 4px;
+      background: $lighter-gray;
     }
-
+    
     &::-webkit-scrollbar-thumb {
-      background-color: $primary-color;
-      border-radius: 4px;
+      background: $gray;
+      border-radius: $border-radius;
     }
   }
 
   @include breakpoint($large) {
     @include span(2 of 12);
     opacity: 0.95;
-    -webkit-transition: all 0.3s ease;
-            transition: all 0.3s ease;
+    -webkit-transition: $global-transition;
+            transition: $global-transition;
 
     &:hover {
       opacity: 1;
       transform: translateX(5px);
-      box-shadow: 0 6px 16px rgba(#000, 0.12);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
   }
 
@@ -61,59 +53,29 @@
   h2, h3, h4, h5, h6 {
     margin-bottom: 0.5em;
     font-family: $sans-serif-narrow;
-    color: $gray-dark;
+    color: $text-color;
   }
 
   h3, h4 {
     font-size: $type-size-5;
-    font-weight: bold;
   }
 
   p, li {
     font-family: $sans-serif;
     font-size: $type-size-6;
-    line-height: 1.6;
-    color: $gray;
+    line-height: 1.5;
+    color: mix($text-color, $gray, 70%);
   }
 
   img {
     width: 100%;
-    transition: transform 0.3s ease;
+    transition: $global-transition;
     
     &:hover {
       transform: scale(1.02);
     }
   }
 }
-
-.sidebar__right {
-  margin-bottom: 1em;
-  background: #ffffff;
-  border-radius: $border-radius;
-  padding: 1em;
-  box-shadow: 0 2px 8px rgba(#000, 0.05);
-  transition: all 0.3s ease;
-
-  &:hover {
-    box-shadow: 0 4px 12px rgba(#000, 0.08);
-  }
-
-  @include breakpoint($large) {
-    position: relative;
-    float: right;
-    width: $right-sidebar-width-narrow;
-    margin-left: span(0.5 of 12);
-    z-index: 10;
-  }
-
-  @include breakpoint($x-large) {
-    width: $right-sidebar-width;
-  }
-}
-
-/*
-   Author profile and links
-   ========================================================================== */
 
 .author__avatar {
   display: table-cell;
@@ -129,16 +91,16 @@
   img {
     max-width: 175px;
     border-radius: 50%;
-    transition: all 0.3s ease;
+    transition: $global-transition;
 
     @include breakpoint($large) {
       padding: 5px;
       border: 2px solid $primary-color;
-      box-shadow: 0 0 15px rgba($primary-color, 0.1);
+      box-shadow: $box-shadow;
 
       &:hover {
         transform: scale(1.05);
-        box-shadow: 0 0 20px rgba($primary-color, 0.2);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       }
     }
   }
@@ -150,41 +112,18 @@
   padding-left: 15px;
   padding-right: 25px;
   line-height: 1;
+  border-bottom: 1px solid $border-color;
 
   @include breakpoint($large) {
     display: block;
     width: 100%;
     padding: 1em 0;
-    border-bottom: 2px solid $border-color;
   }
 }
 
 .author__name {
   margin: 0;
-  color: $gray-dark;
-  font-weight: bold;
-
-  @include breakpoint($large) {
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-}
-
-.sidebar .author__name {
-  font-family: $sans-serif;
-  font-size: $type-size-5;
-}
-
-.sidebar .author__desktop {
-  display: none;
-  @media screen and (min-width: 1024px) {
-    display: block;
-  }
-}
-
-.author__pronouns {
-  margin: 0;
-  color: $gray;
+  color: $text-color;
 
   @include breakpoint($large) {
     margin-top: 10px;
@@ -194,7 +133,7 @@
 
 .author__bio {
   margin: 0;
-  color: $gray;
+  color: mix($text-color, $gray, 70%);
 
   @include breakpoint($large) {
     margin-top: 10px;
@@ -209,7 +148,6 @@
   vertical-align: middle;
   font-family: $sans-serif;
   z-index: 10;
-  position: relative;
   cursor: pointer;
 
   li:last-child {
@@ -227,7 +165,7 @@
     padding: 0.5em 1em;
     border-radius: $border-radius;
     background: mix(#fff, $primary-color, 90%);
-    transition: all 0.3s ease;
+    transition: $global-transition;
 
     &:hover {
       background: mix(#fff, $primary-color, 80%);
@@ -235,111 +173,6 @@
 
     @include breakpoint($large) {
       display: none;
-    }
-  }
-}
-
-.author__urls {
-  display: none;
-  position: absolute;
-  right: 0;
-  margin-top: 15px;
-  padding: 1em;
-  list-style-type: none;
-  border: 1px solid $border-color;
-  border-radius: $border-radius;
-  background: #fff;
-  z-index: -1;
-  box-shadow: 0 4px 12px rgba(#000, 0.1);
-  cursor: default;
-  transition: all 0.3s ease;
-
-  @include breakpoint($large) {
-    display: block;
-    position: relative;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    box-shadow: none;
-  }
-
-  &:before {
-    display: block;
-    content: "";
-    position: absolute;
-    top: -11px;
-    left: calc(50% - 10px);
-    width: 0;
-    border-style: solid;
-    border-width: 0 10px 10px;
-    border-color: $border-color transparent;
-    z-index: 0;
-
-    @include breakpoint($large) {
-      display: none;
-    }
-  }
-
-  &:after {
-    display: block;
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: calc(50% - 10px);
-    width: 0;
-    border-style: solid;
-    border-width: 0 10px 10px;
-    border-color: #fff transparent;
-    z-index: 1;
-
-    @include breakpoint($large) {
-      display: none;
-    }
-  }
-
-  li {
-    white-space: nowrap;
-  }
-
-  a {
-    display: block;
-    margin-bottom: 5px;
-    padding: 0.5em 1em;
-    color: $gray-dark;
-    font-size: $type-size-5;
-    text-decoration: none;
-    border-radius: $border-radius;
-    transition: all 0.2s ease;
-
-    &:hover {
-      color: $primary-color;
-      background: mix(#fff, $primary-color, 95%);
-      transform: translateX(5px);
-    }
-  }
-}
-
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  .sidebar {
-    background: linear-gradient(to bottom, #2a2a2a, #222);
-    box-shadow: 0 4px 12px rgba(#000, 0.2);
-
-    h2, h3, h4, h5, h6 {
-      color: #fff;
-    }
-
-    p, li {
-      color: #bbb;
-    }
-  }
-
-  .author__urls a {
-    color: #fff;
-
-    &:hover {
-      background: rgba($primary-color, 0.2);
     }
   }
 }
