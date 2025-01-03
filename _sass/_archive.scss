@@ -2,209 +2,56 @@
    ARCHIVE
    ========================================================================== */
 
-.archive {
-  margin-bottom: 2em;
-
-  @include breakpoint($medium) {
-    @include span(12 of 12);
-  }
-
-  @include breakpoint($large) {
-    @include span(10 of 12 last);
-    @include prefix(0.5 of 12);
-  }
-
-  a {
-    text-decoration: none;
-    color: $info-color;
-    border-bottom: 1px solid transparent;
-    transition: all 0.2s ease;
+.page__content .archive {
+  margin-bottom: 2em !important;
+  
+  .archive__item {
+    position: relative;
+    padding: 1.5em !important;
+    margin-bottom: 1.5em !important;
+    background: white !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
 
     &:hover {
-      color: mix($info-color, $text-color, 80%);
-      border-bottom-color: currentColor;
+      transform: translateY(-4px) !important;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1) !important;
+    }
+  }
 
-      img {
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        transform: translateY(-2px);
+  .archive__item-title {
+    margin: 0 0 0.5em !important;
+    padding-bottom: 0.5em !important;
+    font-size: 1.25em !important;
+    color: $text-color !important;
+    border-bottom: 1px solid $border-color !important;
+
+    a {
+      color: inherit !important;
+      text-decoration: none !important;
+
+      &:hover {
+        color: $info-color !important;
       }
     }
+  }
+
+  .archive__item-excerpt {
+    margin-top: 1em !important;
+    font-size: 0.9em !important;
+    line-height: 1.6 !important;
   }
 }
 
 .archive__subtitle {
-  margin: 1.414em 0 1em;
-  padding: 0.7em 1em;
-  font-size: $type-size-4;
-  font-weight: bold;
-  background: white;
-  border-radius: $border-radius;
-  border-left: 4px solid $info-color;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  color: mix($text-color, $info-color, 60%);
-}
-
-.archive__item {
-  position: relative;
-  padding: 1.5em;
-  margin-bottom: 1.5em;
-  background: white;
-  border-radius: $border-radius;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-
-    .archive__item-title {
-      color: $info-color;
-    }
-
-    &::before {
-      opacity: 1;
-    }
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(to right, $info-color, lighten($info-color, 20%));
-    border-radius: $border-radius $border-radius 0 0;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-}
-
-.archive__item-title {
-  margin: 0 0 0.5em;
-  font-family: $sans-serif-narrow;
-  font-size: $type-size-4;
-  font-weight: bold;
-  line-height: 1.4;
-  color: $text-color;
-  transition: color 0.2s ease;
-
-  a + a {
-    opacity: 0.7;
-    
-    &:hover {
-      opacity: 1;
-    }
-  }
-}
-
-.archive__item-excerpt {
-  margin: 0.5em 0;
-  font-size: $type-size-6;
-  line-height: 1.6;
-  color: mix($text-color, $gray, 70%);
-}
-
-.archive__item-teaser {
-  position: relative;
-  border-radius: $border-radius;
-  overflow: hidden;
-  margin: -1.5em -1.5em 1.5em -1.5em;
-
-  img {
-    width: 100%;
-    transition: all 0.3s ease;
-  }
-}
-
-/* List view */
-.list__item {
-  margin-bottom: 1.5em;
-  padding: 1.5em;
-  background: white;
-  border-radius: $border-radius;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
-  border-left: 3px solid transparent;
-  transition: all 0.3s ease;
-
-  @include breakpoint($medium) {
-    padding-right: $right-sidebar-width-narrow;
-  }
-
-  @include breakpoint($large) {
-    padding-right: $right-sidebar-width;
-  }
-
-  @include breakpoint($x-large) {
-    padding-right: $right-sidebar-width-wide;
-  }
-
-  &:hover {
-    border-left-color: $info-color;
-    transform: translateX(4px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  }
-
-  .page__meta {
-    margin: 0 0 0.5em;
-    font-size: $type-size-6;
-    color: $gray;
-  }
-}
-
-/* Grid view */
-.grid__item {
-  margin-bottom: 2em;
-  background: white;
-  border-radius: $border-radius;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
-  overflow: hidden;
-  transition: all 0.3s ease;
-
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-  }
-
-  .page__meta {
-    margin: 0 0 0.5em;
-  }
-
-  .archive__item {
-    padding: 1em;
-    box-shadow: none;
-    margin: 0;
-
-    &:hover {
-      transform: none;
-      box-shadow: none;
-    }
-  }
-
-  .archive__item-teaser {
-    margin: -1em -1em 1em -1em;
-  }
-
-  @include breakpoint($small) {
-    @include gallery(5 of 10);
-    .archive__item-teaser {
-      max-height: 200px;
-    }
-  }
-
-  @include breakpoint($medium) {
-    margin-left: 0;
-    margin-right: 0;
-    @include gallery(2.5 of 10);
-
-    .archive__item-teaser {
-      max-height: 120px;
-    }
-
-    .archive__item-excerpt {
-      display: block;
-      font-size: $type-size-6;
-      margin: 0.5em 0;
-    }
-  }
+  margin: 1.414em 0 1em !important;
+  padding: 0.7em 1em !important;
+  font-size: 1.25em !important;
+  font-weight: bold !important;
+  background: white !important;
+  border-radius: 8px !important;
+  border-left: 4px solid $info-color !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+  color: mix($text-color, $info-color, 60%) !important;
 }
