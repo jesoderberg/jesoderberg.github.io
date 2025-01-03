@@ -4,11 +4,11 @@
 
 .archive {
   margin-bottom: 2em;
-  padding: 1.5em;
-  background: #ffffff;
+  padding: 1em;
+  background: $body-color;
   border-radius: $border-radius;
-  box-shadow: 0 2px 15px rgba(#000, 0.06);
-  transition: transform 0.3s ease;
+  box-shadow: $box-shadow;
+  transition: $global-transition;
 
   @include breakpoint($medium) {
     @include span(12 of 12);
@@ -21,19 +21,17 @@
 
   a {
     text-decoration: none;
-    background: linear-gradient(to right, $primary-color, $primary-color);
-    background-size: 0 2px;
-    background-position: 0 100%;
-    background-repeat: no-repeat;
-    transition: background-size 0.3s ease;
+    color: $link-color;
+    transition: $global-transition;
 
     &:hover {
-      background-size: 100% 2px;
+      color: $link-color-hover;
+      text-decoration: none;
 
       img {
         box-shadow: 0 0 10px rgba(#000, 0.25);
         transform: scale(1.02);
-        transition: all 0.3s ease;
+        transition: $global-transition;
       }
     }
   }
@@ -41,26 +39,25 @@
 
 .archive__subtitle {
   margin: 1.414em 0 0;
-  padding-bottom: 0.8em;
-  font-size: $type-size-4;
-  color: mix(#fff, $gray, 25%);
-  border-bottom: 2px solid $border-color;
-  font-weight: bold;
-
+  padding-bottom: 0.5em;
+  font-size: $type-size-5;
+  color: $gray;
+  border-bottom: 1px solid $border-color;
+  
   + .list__item .archive__item-title {
-    margin-top: 0.8em;
+    margin-top: 0.5em;
   }
 }
 
 .archive__item-title {
-  margin-bottom: 0.5em;
+  margin-bottom: 0.25em;
   font-family: $sans-serif-narrow;
-  font-weight: bold;
-  transition: color 0.3s ease;
+  font-size: $type-size-4;
+  color: $text-color;
+  transition: $global-transition;
 
   a + a {
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
+    opacity: 0.5;
 
     &:hover {
       opacity: 1;
@@ -68,7 +65,6 @@
   }
 }
 
-/* remove border*/
 .page__content {
   .archive__item-title {
     margin-top: 1em;
@@ -77,10 +73,9 @@
 }
 
 .archive__item-excerpt {
-  margin-top: 0.5em;
+  margin-top: 0;
   font-size: $type-size-6;
-  line-height: 1.6;
-  color: $gray;
+  color: mix($text-color, $gray, 70%);
 
   & + p {
     text-indent: 0;
@@ -90,42 +85,28 @@
 .archive__item-teaser {
   border-radius: $border-radius;
   overflow: hidden;
-  transition: all 0.3s ease;
-  
   img {
     width: 100%;
-    transition: transform 0.3s ease;
+    transition: $global-transition;
   }
 }
 
-.archive__item {
-  padding: 1em;
-  border-radius: $border-radius;
-  transition: all 0.3s ease;
+.archive__item:hover {
+  .archive__item-teaser {
+    box-shadow: $box-shadow;
+  }
 
-  &:hover {
-    background-color: mix(#fff, $primary-color, 95%);
-    transform: translateX(5px);
-    
-    .archive__item-teaser {
-      box-shadow: 0 5px 15px rgba(#000, 0.1);
-    }
-
-    .archive__item-title {
-      color: $primary-color;
-    }
+  .archive__item-title {
+    color: $link-color;
+    text-decoration: none;
   }
 }
-
-/*
-   List view
-   ========================================================================== */
 
 .list__item {
   padding: 1em;
-  margin-bottom: 1em;
   border-radius: $border-radius;
-  transition: all 0.3s ease;
+  transition: $global-transition;
+  background: mix($background-color, $lighter-gray, 95%);
 
   @include breakpoint($medium) {
     padding-right: $right-sidebar-width-narrow;
@@ -139,30 +120,26 @@
     padding-right: $right-sidebar-width-wide;
   }
 
+  &:hover {
+    background: mix($background-color, $lighter-gray, 90%);
+    transform: translateX(5px);
+  }
+
   .page__meta {
     margin: 0 0 4px;
     color: $gray;
-    font-size: $type-size-6;
-  }
-
-  &:hover {
-    background-color: mix(#fff, $primary-color, 95%);
   }
 }
 
-/*
-   Grid view
-   ========================================================================== */
-
 .grid__item {
   margin-bottom: 2em;
-  box-shadow: 0 2px 10px rgba(#000, 0.05);
+  box-shadow: $box-shadow;
   border-radius: $border-radius;
-  transition: all 0.3s ease;
+  transition: $global-transition;
 
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(#000, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 
   .page__meta {
@@ -197,100 +174,6 @@
     .archive__item-excerpt {
       display: block;
       font-size: $type-size-6;
-    }
-  }
-}
-
-/*
-   Features
-   ========================================================================== */
-
-.feature__wrapper {
-  @include clearfix();
-  margin-bottom: 2em;
-  border-bottom: 2px solid $border-color;
-  padding-bottom: 2em;
-}
-
-.feature__item {
-  margin-bottom: 2em;
-  font-size: 1.25rem;
-  transition: all 0.3s ease;
-
-  @include breakpoint($small) {
-    margin-bottom: 0;
-    @include gallery(4 of 12);
-
-    .feature__item-teaser {
-      max-height: 200px;
-      overflow: hidden;
-    }
-  }
-
-  &--left {
-    @include full();
-    font-size: 1.25rem;
-
-    .archive__item-teaser {
-      margin-bottom: 2em;
-    }
-
-    @include breakpoint($small) {
-      .archive__item-teaser {
-        @include span(5 of 12);
-      }
-
-      .archive__item-body {
-        @include span(7 of 12 last);
-        @include prefix(0.5 of 12);
-        @include suffix(1 of 12);
-      }
-    }
-  }
-
-  &--right {
-    @include full();
-    font-size: 1.25rem;
-
-    .archive__item-teaser {
-      margin-bottom: 2em;
-    }
-
-    @include breakpoint($small) {
-      text-align: right;
-
-      .archive__item-teaser {
-        @include span(5 of 12 rtl);
-      }
-
-      .archive__item-body {
-        @include span(7 of 12 last rtl);
-        @include prefix(0.5 of 12);
-        @include suffix(1 of 12);
-      }
-    }
-  }
-
-  &--center {
-    @include full();
-    font-size: 1.25rem;
-
-    .archive__item-teaser {
-      margin-bottom: 2em;
-    }
-
-    @include breakpoint($small) {
-      text-align: center;
-
-      .archive__item-teaser {
-        margin: 0 auto;
-        width: span(5 of 12);
-      }
-
-      .archive__item-body {
-        margin: 0 auto;
-        width: span(7 of 12);
-      }
     }
   }
 }
