@@ -16,8 +16,9 @@
 
 /* Now we can use the variables for our custom styles */
 body {
-  background: #f5f7fa;  /* Light gray base */
-  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+  background: #2a2a2a;  /* Dark gray base */
+  /* Or for a subtle gradient variation of dark grays: */
+  background: linear-gradient(135deg, #2a2a2a 0%, #363636 100%);
   min-height: 100vh;
 }
 
@@ -51,26 +52,22 @@ body {
 .page {
   padding: 2em;
   margin-bottom: 2em;
-  background-color: #ffffff;
+  background-color: #333333;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
-.page__content {
-  background-color: transparent;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .masthead {
-  background-color: rgba(255, 255, 255, 0.98);
+  background-color: rgba(42, 42, 42, 0.98);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid #eaecef;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #404040;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .footer {
-  background: linear-gradient(180deg, #f8f9fa 0%, #f2f3f5 100%);
-  border-top: 1px solid #eaecef;
+  background: #2a2a2a;
+  border-top: 1px solid #404040;
   margin-top: 3em;
   padding: 2em 0;
 }
