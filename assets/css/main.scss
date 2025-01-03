@@ -1,6 +1,6 @@
 ---
 ---
-/* Theme imports remain the same */
+/* Theme imports */
 @import "vendor/breakpoint/breakpoint";
 @import "variables";
 @import "mixins";
@@ -26,54 +26,12 @@
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
 
-/* Diagnostic styling - this will highlight different sections in different colors */
-.masthead {
-    background: #ffebee !important;
-}
-
-.initial-content {
-    background: #e3f2fd !important;
-}
-
-#main {
-    background: #e8f5e9 !important;
-}
-
-.page {
-    background: #fff3e0 !important;
-}
-
-.page__content {
-    background: #f3e5f5 !important;
-}
-
-
-/* Add these specific rules to target and remove the top spacing */
-.page {
-    padding-top: 0;
-    margin-top: 0;
-}
-
-#main {
-    padding-top: 1em;  /* Reduce from default */
-}
-
-.page__content {
-    margin-top: 0;
-    padding-top: 0;
-}
-
-.page__title {
-    margin-top: 0;
-    padding-top: 0;
-}
-
-
-/* Custom layout adjustments */
+/* Base styles */
 body {
     background-color: #f0f5f9;
 }
 
+/* Layout structure */
 .initial-content {
     @media (min-width: 80em) {
         display: grid;
@@ -85,6 +43,7 @@ body {
     }
 }
 
+/* Sidebar styles */
 .sidebar {
     @media (min-width: 80em) {
         width: 250px;
@@ -101,36 +60,37 @@ body {
     }
 }
 
+/* Main content area */
 #main {
+    margin-top: 1em;
+    
     @media (min-width: 80em) {
         background-color: white;
-        padding: 0;  /* Remove default padding */
         border-radius: 8px;
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        margin-top: 1em;
         width: 100%;
-
-        /* Target the article inside main */
-        article {
-            padding: 2em;
-            padding-top: 1em; /* Reduced top padding */
-            margin: 0;
-        }
-
-        /* Target the section inside article */
-        .page__content {
-            padding-top: 0;
-            margin-top: 0;
-        }
     }
 }
 
-/* Additional specific fixes for page elements */
-.page__title, 
-.page__meta, 
-.page__lead {
-    margin-top: 0;
-    padding-top: 0;
+/* Page content */
+.page {
+    padding: 1em;
+}
+
+.page__content {
+    margin: 0;
+    padding: 0;
+    
+    p, li {
+        color: #1a1a1a;
+        line-height: 1.8;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        color: #2c3e50;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
 }
 
 /* Mobile adjustments */
@@ -146,23 +106,17 @@ body {
 
     #main {
         width: 100%;
-        padding: 1em;
         background-color: white;
         border-radius: 8px;
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 }
 
-/* Content styling */
-.page__content {
-    p, li {
-        color: #1a1a1a;
-        line-height: 1.8;
-    }
-    
-    h1, h2, h3, h4, h5, h6 {
-        color: #2c3e50;
-        margin-top: 0.5em;
-        margin-bottom: 0.5em;
-    }
-}
+/* Optional diagnostic styling - comment out when not debugging */
+/*
+.masthead { background: #ffebee !important; }
+.initial-content { background: #e3f2fd !important; }
+#main { background: #e8f5e9 !important; }
+.page { background: #fff3e0 !important; }
+.page__content { background: #f3e5f5 !important; }
+*/
