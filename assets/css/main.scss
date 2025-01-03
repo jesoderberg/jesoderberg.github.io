@@ -1,4 +1,4 @@
-/*!
+//*!
  * Minimal Mistakes Jekyll Theme
  * Copyright (c) Michael Rose - https://twitter.com/mmistakes
  * Licensed under MIT (https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE)
@@ -18,37 +18,18 @@
 @import "utilities";
 @import "animations";
 
-/* Global Styles
-   ========================================================================== */
+// Add page background
 body {
-  background-color: #f0f2f5;  // Sky gray background
+  background-color: #f0f2f5;
 }
 
-// Main content and sidebar distinction
-.main {
-  background-color: #ffffff;  // White background for main content
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  padding: 2rem;
-  margin: 1rem;
+// Modify existing theme classes
+.page {
+  background-color: #ffffff;
 }
 
 .sidebar {
-  background-color: #e8eaed;  // Slightly darker gray for sidebar
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  padding: 1.5rem;
-  margin: 1rem;
-  
-  // Add a subtle border on the right when sidebar is on the left
-  &.left {
-    border-right: 1px solid #dde0e4;
-  }
-  
-  // Add a subtle border on the left when sidebar is on the right
-  &.right {
-    border-left: 1px solid #dde0e4;
-  }
+  background-color: #e8eaed;
 }
 
 /* Components 
