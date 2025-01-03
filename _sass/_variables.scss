@@ -16,6 +16,9 @@ $indent-var                 : 1.3em;
 $serif                      : Georgia, Times, serif;
 $sans-serif                 : -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
 $monospace                  : Monaco, Consolas, "Lucida Console", monospace;
+$background-color           : #f0f2f5 !default;
+$sidebar-background-color   : #e8eaed !default;
+$text-color                 : #222831 !default;
 
 /* sans serif typefaces */
 $sans-serif-narrow          : $sans-serif;
