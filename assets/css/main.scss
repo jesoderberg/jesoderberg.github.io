@@ -9,10 +9,19 @@
  *
 */
 
-@import "vendor/breakpoint/breakpoint"; // media query mixins
+/* Set the body background before imports */
+body {
+  background: linear-gradient(45deg, mix($background-color, $info-color, 97%), $background-color);
+  min-height: 100vh;
+}
+
+/* Variables and mixins */
+@import "vendor/breakpoint/breakpoint";
 @import "variables";
 @import "mixins";
 @import "vendor/susy/susy";
+
+/* Core CSS */
 @import "reset";
 @import "base";
 @import "utilities";
@@ -20,6 +29,8 @@
 @import "tables";
 @import "buttons";
 @import "notices";
+
+/* Layout */
 @import "masthead";
 @import "navigation";
 @import "footer";
@@ -28,8 +39,39 @@
 @import "page";
 @import "archive";
 @import "sidebar";
+
+/* Vendor */
 @import "vendor/font-awesome/fontawesome";
 @import "vendor/font-awesome/solid";
 @import "vendor/font-awesome/brands";
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
+
+/* Custom page layout enhancements */
+.page {
+  background-color: $body-color;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2em;
+  margin-bottom: 2em;
+}
+
+.page__content {
+  background-color: transparent;
+}
+
+.masthead {
+  background-color: rgba($body-color, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid $border-color;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.footer {
+  background: mix($background-color, $gray, 95%);
+  border-top: 1px solid $border-color;
+  margin-top: 3em;
+  padding-top: 2em;
+  color: mix($text-color, $gray, 60%);
+}
