@@ -1,3 +1,20 @@
+---
+---
+
+@charset "utf-8";
+
+@import "minimal-mistakes/skins/default"; // skin
+@import "minimal-mistakes"; // main partials
+
+.page {
+  background-color: #ffffff;
+  padding: 1em;
+}
+
+.sidebar {
+  background-color: $sidebar-background-color;
+}
+
 //*!
  * Minimal Mistakes Jekyll Theme
  * Copyright (c) Michael Rose - https://twitter.com/mmistakes
