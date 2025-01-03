@@ -1,87 +1,41 @@
 ---
 ---
 
-@import "{{ site.theme }}";
-
-// Custom styles
-body {
-  background-color: #f0f2f5;
-}
-
-.container-lg {
-  background-color: #ffffff;
-  padding: 2rem;
-}
-
-.col-3 {
-  background-color: #e8eaed;
-  padding: 1rem;
-}
-
-//*!
- * Minimal Mistakes Jekyll Theme
- * Copyright (c) Michael Rose - https://twitter.com/mmistakes
- * Licensed under MIT (https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE)
+/*
+ *    Minimal Mistakes Jekyll Theme
+ *
+ *  - Michael Rose
+ *  - mademistakes.com
+ *  - https://twitter.com/mmistakes
+ *
 */
 
-/* Variables and Mixins
-   ========================================================================== */
-@import "vendor/breakpoint/breakpoint"; // Media query mixins
+@import "vendor/breakpoint/breakpoint"; // media query mixins
 @import "variables";
 @import "mixins";
 @import "vendor/susy/susy";
 
-/* Core
-   ========================================================================== */
 @import "reset";
 @import "base";
+
 @import "utilities";
 @import "animations";
-
-// Add page background
-body {
-  background-color: #f0f2f5;
-}
-
-// Modify existing theme classes
-.page {
-  background-color: #ffffff;
-}
-
-.sidebar {
-  background-color: #e8eaed;
-}
-
-/* Components 
-   ========================================================================== */
 @import "tables";
 @import "buttons";
 @import "notices";
-@import "forms";
-
-/* Layout
-   ========================================================================== */
 @import "masthead";
 @import "navigation";
 @import "footer";
-@import "sidebar";
+@import "syntax";
+
+@import "forms";
+
 @import "page";
 @import "archive";
+@import "sidebar";
 
-/* Vendor
-   ========================================================================== */
-// Font Awesome
 @import "vendor/font-awesome/fontawesome";
 @import "vendor/font-awesome/solid";
 @import "vendor/font-awesome/brands";
-
-// Magnific Popup
 @import "vendor/magnific-popup/magnific-popup";
-
-/* Syntax Highlighting
-   ========================================================================== */
-@import "syntax";
-
-/* Print Styles
-   ========================================================================== */
 @import "print";
