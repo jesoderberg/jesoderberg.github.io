@@ -2,24 +2,24 @@
 ---
 
 /*
- *    Based on Minimal Mistakes Jekyll Theme
+ *    Basaed on Minimal Mistakes Jekyll Theme
  *
- *  - edited by JESoderberg
- *  
+ *  - JESoderberg
  *
 */
 
-/* Set the body background before imports */
-body {
-  background: linear-gradient(45deg, mix($background-color, $info-color, 97%), $background-color);
-  min-height: 100vh;
-}
-
-/* Variables and mixins */
+/* Variables and mixins first */
 @import "vendor/breakpoint/breakpoint";
 @import "variables";
 @import "mixins";
 @import "vendor/susy/susy";
+
+/* Now we can use the variables for our custom styles */
+body {
+  background: #f5f7fa;  /* Light gray base */
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+  min-height: 100vh;
+}
 
 /* Core CSS */
 @import "reset";
@@ -49,11 +49,11 @@ body {
 
 /* Custom page layout enhancements */
 .page {
-  background-color: $body-color;
-  border-radius: $border-radius;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 2em;
   margin-bottom: 2em;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .page__content {
@@ -61,17 +61,16 @@ body {
 }
 
 .masthead {
-  background-color: rgba($body-color, 0.95);
+  background-color: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid $border-color;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #eaecef;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .footer {
-  background: mix($background-color, $gray, 95%);
-  border-top: 1px solid $border-color;
+  background: linear-gradient(180deg, #f8f9fa 0%, #f2f3f5 100%);
+  border-top: 1px solid #eaecef;
   margin-top: 3em;
-  padding-top: 2em;
-  color: mix($text-color, $gray, 60%);
+  padding: 2em 0;
 }
