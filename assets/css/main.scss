@@ -1,18 +1,21 @@
 ---
 ---
 
-@charset "utf-8";
+@import "{{ site.theme }}";
 
-@import "minimal-mistakes/skins/default"; // skin
-@import "minimal-mistakes"; // main partials
-
-.page {
-  background-color: #ffffff;
-  padding: 1em;
+// Custom styles
+body {
+  background-color: #f0f2f5;
 }
 
-.sidebar {
-  background-color: $sidebar-background-color;
+.container-lg {
+  background-color: #ffffff;
+  padding: 2rem;
+}
+
+.col-3 {
+  background-color: #e8eaed;
+  padding: 1rem;
 }
 
 //*!
