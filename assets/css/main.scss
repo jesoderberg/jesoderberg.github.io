@@ -14,14 +14,6 @@
 @import "mixins";
 @import "vendor/susy/susy";
 
-/* Now we can use the variables for our custom styles */
-body {
-  background: #2a2a2a;  /* Dark gray base */
-  /* Or for a subtle gradient variation of dark grays: */
-  background: linear-gradient(135deg, #2a2a2a 0%, #363636 100%);
-  min-height: 100vh;
-}
-
 /* Core CSS */
 @import "reset";
 @import "base";
@@ -49,25 +41,34 @@ body {
 @import "print";
 
 /* Custom page layout enhancements */
+body {
+  /* Option 1: Solid fern green */
+  background: #e8f3e8;  /* Light fern green */
+  
+  /* Option 2: Subtle fern gradient */
+  background: linear-gradient(135deg, #e8f3e8 0%, #dbe9db 100%);
+  min-height: 100vh;
+}
+
 .page {
   padding: 2em;
   margin-bottom: 2em;
-  background-color: #333333;
+  background-color: #ffffff;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .masthead {
-  background-color: rgba(42, 42, 42, 0.98);
+  background-color: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid #404040;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #eaecef;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .footer {
-  background: #2a2a2a;
-  border-top: 1px solid #404040;
+  background: #f8f9fa;
+  border-top: 1px solid #eaecef;
   margin-top: 3em;
   padding: 2em 0;
 }
