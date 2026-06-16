@@ -1,0 +1,121 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Portfolio">
+
+  <section class="relative bg-gray-950 border-b border-gray-800 overflow-hidden">
+    <img
+      src="/images/blueprint-hero-bg.png"
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover object-bottom opacity-40"
+    />
+    <div class="relative max-w-3xl mx-auto px-6 py-24 text-center">
+      <p class="text-blue-400 text-xs font-semibold tracking-[0.2em] uppercase mb-8">
+        Selected Work
+      </p>
+      <h1 class="text-4xl md:text-5xl font-bold leading-[1.15] tracking-tight mb-8 text-white">
+        Portfolio
+      </h1>
+      <p class="text-gray-400 text-base md:text-lg leading-relaxed max-w-xl mx-auto">
+        Open-source software, systems, and applied projects.
+      </p>
+    </div>
+  </section>
+
+  <div class="max-w-3xl mx-auto px-6 py-16">
+
+    <div class="border border-gray-700 bg-gray-800 rounded-xl p-8">
+      <div class="flex items-start justify-between gap-4 mb-3">
+        <h2 class="text-lg font-bold text-white">USLM Parser</h2>
+        <a
+          href="https://github.com/jesoderberg/uslm-parser"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-xs font-medium text-blue-400 bg-blue-900/30 px-3 py-1 rounded-full whitespace-nowrap hover:bg-blue-900/50 transition-colors"
+        >
+          GitHub →
+        </a>
+      </div>
+      <p class="text-sm text-gray-500 mb-4">Python · XML · MIT License · 2026</p>
+      <p class="text-sm text-gray-400 leading-relaxed mb-6">
+        Open-source Python framework for automated parsing of United States Legislative Markup (USLM) XML
+        the standard format used by the Government Publishing Office for federal legislation. Removes human
+        transcription error from the legislative data pipeline entirely.
+      </p>
+      <div class="grid grid-cols-2 gap-3 text-sm">
+        <div class="bg-gray-900 rounded-lg p-3">
+          <p class="text-xs text-gray-500 mb-1">Efficiency gain</p>
+          <p class="font-bold text-white">4.8M–9.6M×</p>
+        </div>
+        <div class="bg-gray-900 rounded-lg p-3">
+          <p class="text-xs text-gray-500 mb-1">Cross-format error</p>
+          <p class="font-bold text-white">0.0%</p>
+        </div>
+        <div class="bg-gray-900 rounded-lg p-3">
+          <p class="text-xs text-gray-500 mb-1">Validation types</p>
+          <p class="font-bold text-white">38 → 103</p>
+        </div>
+        <div class="bg-gray-900 rounded-lg p-3">
+          <p class="text-xs text-gray-500 mb-1">False positive rate</p>
+          <p class="font-bold text-white">&gt;99% → &lt;1%</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="border border-gray-700 bg-gray-800 rounded-xl p-8 mt-5">
+      <div class="flex items-start justify-between gap-4 mb-3">
+        <h2 class="text-lg font-bold text-white">USACE Analytical Notebooks</h2>
+        <span class="text-xs font-medium text-gray-500 bg-gray-900 px-3 py-1 rounded-full whitespace-nowrap">
+          Internal
+        </span>
+      </div>
+      <p class="text-sm text-gray-500 mb-4">Python · pandas · Jupyter · 2025–2026</p>
+      <p class="text-sm text-gray-400 leading-relaxed mb-6">
+        Suite of analytical notebooks for national Civil Works program and project management at USACE HQ.
+        Automates schedule deviation analysis, milestone tracking, and T&amp;I (Technically and Independently)
+        workload reporting across thousands of active studies and construction projects.
+      </p>
+      <div class="grid grid-cols-2 gap-3 text-sm">
+        <div class="bg-gray-900 rounded-lg p-3">
+          <p class="text-xs text-gray-500 mb-1">Studies analyzed</p>
+          <p class="font-bold text-white">114 records</p>
+        </div>
+        <div class="bg-gray-900 rounded-lg p-3">
+          <p class="text-xs text-gray-500 mb-1">Construction projects</p>
+          <p class="font-bold text-white">718 records</p>
+        </div>
+        <div class="bg-gray-900 rounded-lg p-3">
+          <p class="text-xs text-gray-500 mb-1">Notebooks</p>
+          <p class="font-bold text-white">10+</p>
+        </div>
+        <div class="bg-gray-900 rounded-lg p-3">
+          <p class="text-xs text-gray-500 mb-1">Libraries</p>
+          <p class="font-bold text-white">pandas · NumPy · matplotlib</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="border border-gray-700 bg-gray-800 rounded-xl p-8 mt-5">
+      <div class="flex items-start justify-between gap-4 mb-3">
+        <h2 class="text-lg font-bold text-white">Geospatial Mapping &amp; Visualization</h2>
+        <span class="text-xs font-medium text-gray-500 bg-gray-900 px-3 py-1 rounded-full whitespace-nowrap">
+          Selected work
+        </span>
+      </div>
+      <p class="text-sm text-gray-500 mb-4">Python · GeoPandas · cartopy · ArcGIS · matplotlib</p>
+      <p class="text-sm text-gray-400 leading-relaxed mb-6">
+        Geospatial analysis and map production spanning federal regulatory programs, Civil Works project locations,
+        and FEMA disaster declaration data. Work ranges from national-scale choropleth mapping to county-level
+        emergency impact visualization.
+      </p>
+      <ul class="space-y-2 text-sm text-gray-400">
+        <li class="flex gap-2"><span><span class="text-gray-200 font-medium">National Capital Region map</span>, county-level base map built from ArcGIS REST services via GeoPandas</span></li>
+        <li class="flex gap-2"><span><span class="text-gray-200 font-medium">FEMA disaster declarations</span>, hurricane impact choropleth maps, 2022–2024 DR declarations</span></li>
+        <li class="flex gap-2"><span><span class="text-gray-200 font-medium">Civil Works project locations</span>, CW location hierarchy visualization across the national portfolio</span></li>
+        <li class="flex gap-2"><span><span class="text-gray-200 font-medium">National wetland data standards</span>, co-authored the FGDC federal standard governing wetland spatial data nationwide</span></li>
+      </ul>
+    </div>
+
+  </div>
+</Layout>

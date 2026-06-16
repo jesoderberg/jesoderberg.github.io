@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const publications = [
+  {
+    year: '2026',
+    title: 'Enhancing Data Accessibility and Quality Through Advanced Data Processing Techniques: A Case Study',
+    venue: 'Ph.D. Dissertation · Capital Technology University',
+    type: 'Dissertation',
+    description: 'Demonstrates that human data entry error is preventable, not inevitable, through automated processing at the point of entry. Case study in federal legislative document processing: automated parsing of USLM XML replaces error-prone manual transcription. Extends the dirty data taxonomy from 38 to 103 legislative-specific validation types and reduces false positives from over 99% to under 1% — full performance results are demonstrated in the USLM Parser software below.',
+  },
+  {
+    year: '2026',
+    title: 'USLM Parser: A Comprehensive Python Framework for Parsing United States Legislative Markup Documents',
+    venue: 'Open-source software · GitHub (MIT License)',
+    type: 'Software',
+    url: 'https://github.com/jesoderberg/uslm-parser',
+    description: 'Automates parsing of USLM XML legislative documents. 26,650 elements/second vs. 10–20 by hand — a 4.8M–9.6M× efficiency gain over manual transcription, with 0.0% cross-format inconsistency across JSON, CSV, SQL, and XML exports.',
+  },
+  {
+    year: '2011',
+    title: 'Crowdsourcing Aquatic Resource Data Collection: Exploring Effective Methods to Collect and Rectify Citizen-Contributed Data',
+    venue: 'American Geophysical Union (AGU) Fall Meeting',
+    type: 'Conference',
+    description: 'Explored the potential and limitations of crowdsourcing for aquatic resources regulated under Section 404 of the Clean Water Act. Addressed data quality challenges in citizen-contributed spatial datasets.',
+  },
+  {
+    year: '2009',
+    title: 'Utilizing New Technology and GIS to Improve Permitting Programs',
+    venue: 'Wetland News, Association of State Wetland Managers',
+    type: 'Journal',
+    description: 'Practical applications of geospatial technology in the federal nationwide Regulatory Program, how GIS integration improved permitting data quality, process efficiency, and regulatory transparency.',
+  },
+  {
+    year: '2009',
+    title: 'Geospatial Data Management in Federal Regulatory Programs',
+    venue: 'FOSS4G International Conference · Sydney, Australia',
+    type: 'Conference',
+    description: 'Invited presentation as Department of the Army representative. Described adoption of open-source geospatial technologies for national environmental permit tracking and spatial analysis.',
+  },
+  {
+    year: '2008',
+    title: 'National Wetland Mapping Standards',
+    venue: 'Federal Geographic Data Committee (FGDC)',
+    type: 'Federal Standard',
+    description: 'Co-authored governing federal standard for wetland data nationwide. Established the authoritative national framework for wetland spatial data collection, classification, accuracy requirements, and quality assurance.',
+  },
+];
+---
+
+<Layout title="Publications">
+
+  <section class="relative bg-gray-950 border-b border-gray-800 overflow-hidden">
+    <img
+      src="/images/blueprint-hero-bg.png"
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover object-top opacity-40"
+    />
+    <div class="relative max-w-3xl mx-auto px-6 py-24 text-center">
+      <p class="text-blue-400 text-xs font-semibold tracking-[0.2em] uppercase mb-8">
+        Research &amp; Software
+      </p>
+      <h1 class="text-4xl md:text-5xl font-bold leading-[1.15] tracking-tight mb-8 text-white">
+        Publications
+      </h1>
+      <p class="text-gray-400 text-base md:text-lg leading-relaxed max-w-xl mx-auto">
+        Research, conference presentations, federal standards, and software.
+      </p>
+    </div>
+  </section>
+
+  <div class="max-w-3xl mx-auto px-6 py-16">
+
+    <div class="space-y-8">
+      {publications.map((pub) => (
+        <div class="border-l-2 border-gray-700 pl-6 hover:border-blue-500 transition-colors">
+          <div class="flex items-start gap-3 mb-2">
+            <span class="text-xs font-semibold text-gray-500 whitespace-nowrap pt-0.5">{pub.year}</span>
+            <span class="text-xs font-medium text-blue-400 bg-blue-900/30 px-2 py-0.5 rounded">{pub.type}</span>
+          </div>
+          {pub.url ? (
+            <a href={pub.url} target="_blank" rel="noopener noreferrer"
+               class="font-semibold text-gray-100 hover:text-blue-400 transition-colors leading-snug block mb-1">
+              {pub.title}
+            </a>
+          ) : (
+            <p class="font-semibold text-gray-100 leading-snug mb-1">{pub.title}</p>
+          )}
+          <p class="text-sm text-gray-500 mb-2">{pub.venue}</p>
+          <p class="text-sm text-gray-400 leading-relaxed">{pub.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,218 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const coreDeities = [
+  {
+    name: 'Odin',
+    title: 'The All-Father · Central Orchestrator',
+    description: 'Primary coordination system and CLI interface. Routes all requests between components, invokes specialist gods, and maintains context across the full system. The one you talk to; the one who decides what happens next.',
+    functions: ['Request routing', 'Component coordination', 'Primary CLI/API interface'],
+  },
+  {
+    name: 'Frigg',
+    title: 'The Planner · Task & Schedule Management',
+    description: 'Calendar integration, task scheduling, and workflow automation. Owns cron jobs, recurring processes, and reminders. Frigg knows what has to happen and when, so nothing slips.',
+    functions: ['Calendar integration', 'Task scheduling', 'Workflow automation', 'Cron & recurring processes'],
+  },
+  {
+    name: 'Heimdall',
+    title: 'The Watchman · Monitoring & Alerts',
+    description: 'System health monitoring, error detection, real-time notifications, and security monitoring. Heimdall never sleeps, watches every threshold and fires alerts the moment something crosses it.',
+    functions: ['System health monitoring', 'Error detection & logging', 'Real-time notifications', 'Security monitoring'],
+  },
+  {
+    name: 'Mimir',
+    title: 'Wisdom · Knowledge Base',
+    description: 'Vector database for personal knowledge. Powers the RAG system that retrieves context when Odin needs to answer something. Long-term memory storage, the well Odin sacrificed his eye to drink from.',
+    functions: ['Vector database', 'RAG retrieval', 'Long-term memory storage'],
+  },
+  {
+    name: 'Huginn',
+    title: 'Thought · Real-Time Collection',
+    description: 'Web scraping, RSS feeds, API data collection, and real-time information gathering. One of Odin\'s ravens, sent out across the world each day to bring back what\'s happening.',
+    functions: ['Web scraping', 'RSS & feed aggregation', 'API data collection', 'Real-time gathering'],
+  },
+  {
+    name: 'Muninn',
+    title: 'Memory · Processing & Recall',
+    description: 'Conversation history, pattern recognition, and memory consolidation. The other raven, where Huginn collects, Muninn remembers, connects, and surfaces what\'s relevant when it\'s needed.',
+    functions: ['Conversation history', 'Pattern recognition', 'Memory consolidation & retrieval'],
+  },
+];
+
+const specializedDeities = [
+  {
+    name: 'Bragi',
+    title: 'The Poet · Content Creation',
+    description: 'Writing assistance, blog posts, emails, creative content, and documentation generation.',
+  },
+  {
+    name: 'Freya',
+    title: 'Magic & Beauty · Creative AI',
+    description: 'Image generation, design suggestions, and aesthetic decisions.',
+  },
+  {
+    name: 'Tyr',
+    title: 'Justice · Rules Engine',
+    description: 'Business logic, decision trees, and policy enforcement. The god of justice enforces what is supposed to happen.',
+  },
+  {
+    name: 'Thor',
+    title: 'The Protector · Security & Validation',
+    description: 'Data validation, security checks, error handling, and resilience. Thor does not negotiate with threats.',
+  },
+  {
+    name: 'Loki',
+    title: 'The Trickster · Testing & Experimentation',
+    description: 'A/B testing, chaos engineering, and experimental features. Loki breaks things intentionally, so production doesn\'t.',
+  },
+  {
+    name: 'Njord',
+    title: 'Sea & Wind · External APIs',
+    description: 'Third-party API integrations, data streaming, and external service connections.',
+  },
+  {
+    name: 'Idun',
+    title: 'Renewal · Data Refresh',
+    description: 'Cache management, data updates, synchronization, and system maintenance.',
+  },
+  {
+    name: 'Skadi',
+    title: 'The Hunter · Search & Retrieval',
+    description: 'Full-text search, file finding, and information hunting across the system.',
+  },
+  {
+    name: 'Hod',
+    title: 'Darkness · Archives',
+    description: 'Cold storage, deprecated data, and backup systems. What Hod holds, nothing touches.',
+  },
+  {
+    name: 'Forseti',
+    title: 'Arbitration · Decision Making',
+    description: 'Conflict resolution between modules, priority management, and resource allocation.',
+  },
+];
+---
+
+<Layout title="PAI">
+
+  <section class="relative bg-gray-950 border-b border-gray-800 overflow-hidden">
+    <img
+      src="/images/blueprint-hero-bg.png"
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover object-right-bottom opacity-40"
+    />
+    <div class="relative max-w-3xl mx-auto px-6 py-24 text-center">
+      <p class="text-blue-400 text-xs font-semibold tracking-[0.2em] uppercase mb-8">
+        Personal AI Infrastructure
+      </p>
+      <h1 class="text-4xl md:text-5xl font-bold leading-[1.15] tracking-tight mb-8 text-white">
+        Yggdrasil
+      </h1>
+      <p class="text-gray-400 text-base md:text-lg leading-relaxed max-w-xl mx-auto">
+        The World Tree. A personal AI infrastructure built on Norse mythology, not as decoration,
+        but as architecture. Each god is a system component. Together they run the Life OS.
+      </p>
+    </div>
+  </section>
+
+  <div class="max-w-4xl mx-auto px-6 py-16 space-y-16">
+
+    <!-- Credit -->
+    <section class="border border-gray-700 bg-gray-800/50 rounded-xl p-7">
+      <p class="text-xs font-semibold tracking-[0.15em] uppercase text-gray-500 mb-3">Foundation & Credit</p>
+      <p class="text-gray-300 text-sm leading-relaxed">
+        The PAI concept and its foundational philosophy originate with
+        <a href="https://danielmiessler.com" target="_blank" rel="noopener noreferrer"
+           class="text-blue-400 hover:text-blue-300 transition-colors font-medium">Daniel Miessler</a>
+        and his work on Personal AI Infrastructure. His thinking on what it means to build AI that
+        actually knows you, your goals, and your context, rather than responding to isolated prompts,
+        is the intellectual foundation this implementation is built on. Yggdrasil is one person's
+        instantiation of that idea, shaped by Norse mythology and federal systems thinking.
+        The original framework is his.
+      </p>
+    </section>
+
+    <section>
+      <p class="text-gray-300 text-lg leading-relaxed mb-5">
+        Most people use AI as a better search engine. Yggdrasil is something else, a structured
+        infrastructure layer that turns AI from a tool you reach for into a system that runs alongside
+        your life. It knows your mission, your goals, your current state, your challenges, and the
+        people that matter to you. It operates through an orchestrated hierarchy of specialist
+        components, not a single conversation thread.
+      </p>
+      <p class="text-gray-300 text-lg leading-relaxed">
+        The Norse frame is not cosmetic. Each god embodies something specific, Mimir holds wisdom,
+        Huginn collects thought, Muninn consolidates memory, Loki breaks things intentionally so
+        Thor can defend against what breaks unexpectedly. The mythology already contains the right
+        metaphors for distributed system design. The names make the architecture memorable and the
+        roles coherent.
+      </p>
+    </section>
+
+    <!-- Core Deities -->
+    <section>
+      <h2 class="text-xs font-semibold tracking-[0.15em] uppercase text-gray-500 mb-2 pb-3 border-b border-gray-800">
+        Core Deities, Main System Components
+      </h2>
+      <p class="text-gray-600 text-xs mb-8">The six load-bearing gods. Every request flows through or touches these.</p>
+      <div class="space-y-4">
+        {coreDeities.map((god) => (
+          <div class="border border-gray-700 bg-gray-800 rounded-xl p-7">
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-3">
+              <h3 class="text-white font-bold text-lg">{god.name}</h3>
+              <span class="text-blue-400 text-xs font-medium">{god.title}</span>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed mb-4">{god.description}</p>
+            <div class="flex flex-wrap gap-2">
+              {god.functions.map((fn) => (
+                <span class="text-xs text-gray-500 bg-gray-900 px-2 py-1 rounded">{fn}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Specialized -->
+    <section>
+      <h2 class="text-xs font-semibold tracking-[0.15em] uppercase text-gray-500 mb-2 pb-3 border-b border-gray-800">
+        Specialized Functions
+      </h2>
+      <p class="text-gray-600 text-xs mb-8">Ten specialist gods. Invoked by Odin when the task calls for them.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {specializedDeities.map((god) => (
+          <div class="border border-gray-700 bg-gray-800 rounded-xl p-6">
+            <h3 class="text-white font-bold mb-1">{god.name}</h3>
+            <p class="text-blue-400 text-xs mb-3">{god.title}</p>
+            <p class="text-gray-400 text-sm leading-relaxed">{god.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section>
+      <h2 class="text-xs font-semibold tracking-[0.15em] uppercase text-gray-500 mb-2 pb-3 border-b border-gray-800">
+        Design Philosophy
+      </h2>
+      <p class="text-gray-600 text-xs mb-8">The principles the architecture is built on.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {[
+          { title: 'Scaffolding over model', body: 'The infrastructure is the intelligence. A well-structured system with a modest model outperforms a brilliant model with no structure.' },
+          { title: 'Code before prompts', body: 'Deterministic logic enforces what prompts can only suggest. Validators and pipelines run before any model sees input.' },
+          { title: 'Separation of concerns', body: 'Each god does one thing. Huginn collects; Muninn recalls. Tyr enforces rules; Forseti resolves conflicts. No component does another\'s job.' },
+          { title: 'Cross-component auditing', body: 'Thor validates what Njord brings in. Loki breaks what Tyr enforces. No component trusts itself, verification is structural.' },
+          { title: 'Memory compounds', body: 'Mimir and Muninn ensure every session deposits to the knowledge graph. The system learns your patterns without you managing it.' },
+          { title: 'Verification is non-optional', body: 'Heimdall watches everything. No claim without evidence. Nothing ships without Thor\'s check. "Should work" is not a state.' },
+        ].map((p) => (
+          <div class="border border-gray-700 bg-gray-800 rounded-xl p-6">
+            <h3 class="text-white font-semibold text-sm mb-2">{p.title}</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">{p.body}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+  </div>
+</Layout>

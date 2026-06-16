@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const courses = [
+  {
+    title: 'Project Scheduling: Fundamentals and Advanced',
+    type: 'Professional Development Course',
+    venue: 'Federal Learning Center (IACET Authorized Provider)',
+    format: 'National, in-person and virtual classroom',
+    description: 'National instructor for both Fundamentals and Advanced levels. Courses address schedule development, baseline management, earned value fundamentals, and performance measurement in the context of federal civil works and military construction programs.',
+  },
+  {
+    title: 'Civil Works Continuing Authorities Program',
+    type: 'Professional Development Course',
+    venue: 'Federal Learning Center (IACET Authorized Provider)',
+    format: 'National, in-person and virtual classroom',
+    description: 'Covers the suite of Continuing Authorities Program authorities, smaller, pre-authorized civil works studies and projects executed without specific Congressional authorization. Content addresses eligibility, cost-sharing, program limits, and federal interest determinations.',
+  },
+  {
+    title: 'Civil Works Program Development',
+    type: 'Professional Development Course',
+    venue: 'Federal Learning Center (IACET Authorized Provider)',
+    format: 'National, in-person and virtual classroom',
+    description: 'Addresses the federal budget process as it applies to Civil Works programs, from project formulation and benefit-cost analysis through the President\'s Budget, Congressional justification, and appropriations cycle.',
+  },
+];
+---
+
+<Layout title="Teaching">
+
+  <section class="relative bg-gray-950 border-b border-gray-800 overflow-hidden">
+    <img
+      src="/images/blueprint-hero-bg.png"
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover object-right opacity-40"
+    />
+    <div class="relative max-w-3xl mx-auto px-6 py-24 text-center">
+      <p class="text-blue-400 text-xs font-semibold tracking-[0.2em] uppercase mb-8">
+        Education &amp; Instruction
+      </p>
+      <h1 class="text-4xl md:text-5xl font-bold leading-[1.15] tracking-tight mb-8 text-white">
+        Teaching
+      </h1>
+      <p class="text-gray-400 text-base md:text-lg leading-relaxed max-w-xl mx-auto">
+        National instructor at a Federal Learning Center operating as an IACET Authorized Provider
+        authorized to issue Continuing Education Units (CEUs) under the ANSI/IACET Standard.
+      </p>
+    </div>
+  </section>
+
+  <div class="max-w-3xl mx-auto px-6 py-16">
+
+    <div class="space-y-6">
+      {courses.map((course) => (
+        <div class="border border-gray-700 bg-gray-800 rounded-xl p-8">
+          <span class="text-xs font-medium text-blue-400 bg-blue-900/30 px-2 py-0.5 rounded mb-3 inline-block">
+            {course.type}
+          </span>
+          <h2 class="text-lg font-bold text-white mb-1">{course.title}</h2>
+          <p class="text-sm text-gray-500 mb-1">{course.venue}</p>
+          <p class="text-xs text-gray-600 mb-4">{course.format}</p>
+          <p class="text-sm text-gray-400 leading-relaxed">{course.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</Layout>

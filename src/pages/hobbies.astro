@@ -1,0 +1,85 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Hobbies">
+
+  <section class="relative bg-gray-950 border-b border-gray-800 overflow-hidden">
+    <img
+      src="/images/blueprint-hero-bg.png"
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover object-left opacity-40"
+    />
+    <div class="relative max-w-3xl mx-auto px-6 py-24 text-center">
+      <p class="text-blue-400 text-xs font-semibold tracking-[0.2em] uppercase mb-8">
+        Personal
+      </p>
+      <h1 class="text-4xl md:text-5xl font-bold leading-[1.15] tracking-tight mb-8 text-white">
+        Hobbies &amp; Interests
+      </h1>
+      <p class="text-gray-400 text-base md:text-lg leading-relaxed max-w-xl mx-auto">
+        What I do when I'm not in front of a screen.
+      </p>
+    </div>
+  </section>
+
+  <div class="max-w-5xl mx-auto px-6 py-16">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+      <div class="border border-gray-700 bg-gray-800 rounded-xl p-8">
+        <svg class="w-5 h-5 mb-5 text-gray-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" /></svg>
+        <h2 class="text-base font-bold mb-3 text-white">Gardening</h2>
+        <p class="text-gray-400 text-sm leading-relaxed mb-3">
+          Agronomy is where the academic path started, and it was never really about plants.
+          It was about data and maps before either of those words meant what they mean now.
+          Soils are archives. Every horizon layer is a record of what happened above it, how long
+          ago, under what conditions. A soil survey is a spatial dataset. A nutrient management
+          plan is a data model. Crop rotation is a multi-year optimization strategy with inputs,
+          outputs, and feedback loops that take seasons to close.
+        </p>
+        <p class="text-gray-400 text-sm leading-relaxed mb-3">
+          The garden is where history, data, and maps intersect at human scale. What grew here
+          before matters. What is in the soil matters. What the drainage pattern does in a heavy
+          rain matters. None of it is visible on the surface, and all of it is knowable if you
+          pay attention to the right signals and remember what the last few years told you.
+          That is the same cognitive posture that makes someone good at GIS, or data pipelines,
+          or running analytical notebooks against 700 federal construction projects.
+        </p>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          The degree in Agronomy and Environmental Science was the first data science degree
+          I ever earned. It just did not have that name yet.
+        </p>
+      </div>
+
+      <div class="border border-gray-700 bg-gray-800 rounded-xl p-8">
+        <svg class="w-5 h-5 mb-5 text-gray-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z" /></svg>
+        <h2 class="text-base font-bold mb-3 text-white">Woodworking</h2>
+        <p class="text-gray-400 text-sm leading-relaxed mb-3">
+          The part that nobody talks about is the templates and jigs. Before the real work starts,
+          a craftsman builds the constraint. A jig is a physical structure that makes the right cut
+          easy and the wrong cut impossible. You spend an hour building it so you never have to
+          think about that problem again. Every subsequent piece benefits from that hour forever.
+        </p>
+        <p class="text-gray-400 text-sm leading-relaxed mb-3">
+          That is identical to what a good Python function does. Or a well-designed AI agent. Or
+          a data pipeline with validation at the point of entry. The investment is in the structure
+          that enforces correctness, not in the heroic effort of getting it right by hand each time.
+          The jig removes human judgment from the part where human judgment introduces error,
+          and returns it to the part where human judgment is actually the point.
+        </p>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Most people in the shop go straight to the wood. The craftsman goes to the jig first.
+          Most people in the codebase go straight to the feature. The engineer goes to the
+          constraint first. It is the same discipline, expressed in different materials.
+          The garage taught me that before the IDE did.
+        </p>
+      </div>
+
+      <div class="border border-dashed border-gray-700 rounded-xl p-8 md:col-span-2 flex items-center justify-center">
+        <p class="text-gray-600 text-sm italic">More coming soon.</p>
+      </div>
+
+    </div>
+  </div>
+</Layout>

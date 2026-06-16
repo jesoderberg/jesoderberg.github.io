@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const sections = [
+  {
+    icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m9 9 10.5-3m0 6.553v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 1 1-.99-3.467l2.31-.66a2.25 2.25 0 0 0 1.632-2.163Zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 0 1-.99-3.467l2.31-.66A2.25 2.25 0 0 0 9 15.553Z" /></svg>`,
+    title: 'Music',
+    body: 'Classic rock is the baseline. Americana, storytelling, music with something to say. Loud when the work calls for it, quiet when it does not.',
+  },
+  {
+    icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 0 1-1.125-1.125M3.375 19.5h1.5C5.496 19.5 6 18.996 6 18.375m-3.75.125V5.625m0 12.75V5.625a1.125 1.125 0 0 1 1.125-1.125h15.75a1.125 1.125 0 0 1 1.125 1.125V18.375a1.125 1.125 0 0 1-1.125 1.125h-1.5" /></svg>`,
+    title: 'Film & Books',
+    body: 'Fiction grounded in fact. Comedy that is actually intelligent. Science and space. Crime and the law. Anything that respects the audience enough to make them think.',
+  },
+  {
+    icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" /></svg>`,
+    title: 'Community',
+    body: 'Brotherhood built over decades, not connections made at events. The fire service and civic organizations that run on trust, show up in the bad moments, and do not need to be asked twice.',
+  },
+  {
+    icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253M3.284 14.253A8.959 8.959 0 0 1 3 12c0-1.007.163-1.976.457-2.918" /></svg>`,
+    title: 'Food & Travel',
+    body: 'Local and authentic over recognized and safe, every time. The best meal is always somewhere nobody told you about. The world is the reference frame — most of it has already been visited, all of it is still interesting.',
+  },
+];
+---
+
+<Layout title="Following">
+
+  <section class="relative bg-gray-950 border-b border-gray-800 overflow-hidden">
+    <img
+      src="/images/blueprint-hero-bg.png"
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover object-left-bottom opacity-40"
+    />
+    <div class="relative max-w-3xl mx-auto px-6 py-24 text-center">
+      <p class="text-blue-400 text-xs font-semibold tracking-[0.2em] uppercase mb-8">
+        Personal
+      </p>
+      <h1 class="text-4xl md:text-5xl font-bold leading-[1.15] tracking-tight mb-8 text-white">
+        Following &amp; Interests
+      </h1>
+      <p class="text-gray-400 text-base md:text-lg leading-relaxed max-w-xl mx-auto">
+        Things I pay attention to, return to, and care about.
+      </p>
+    </div>
+  </section>
+
+  <div class="max-w-5xl mx-auto px-6 py-16">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      {sections.map((section) => (
+        <div class="border border-gray-700 bg-gray-800 rounded-xl p-8">
+          <div class="w-5 h-5 mb-5 text-gray-500" set:html={section.icon} />
+          <h2 class="text-base font-bold mb-3 text-white">{section.title}</h2>
+          <p class="text-gray-400 text-sm leading-relaxed">{section.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</Layout>
