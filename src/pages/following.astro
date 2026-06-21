@@ -1,7 +1,30 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const sections = [
+const following = [
+  {
+    icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253M3.284 14.253A8.959 8.959 0 0 1 3 12c0-1.007.163-1.976.457-2.918" /></svg>`,
+    title: 'WARP',
+    body: 'Cloudflare WARP. Private, fast, and actually works. The right answer to the question of what a modern network client should be.',
+  },
+  {
+    icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" /></svg>`,
+    title: 'Daniel Miessler',
+    body: 'Security researcher, writer, and builder. Unsupervised Learning newsletter, the Fabric AI framework. One of the clearest thinkers in the space.',
+  },
+  {
+    icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" /></svg>`,
+    title: 'networkchuck',
+    body: 'Networking and IT education done right. High energy, technically accurate, covers real tools. The YouTube channel that actually teaches.',
+  },
+  {
+    icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3" /></svg>`,
+    title: "ā'pěks",
+    body: 'Oracle APEX. The platform doing things enterprise web development should have figured out a decade ago. Spatial from inception, AI-native in 26.',
+  },
+];
+
+const interests = [
   {
     icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m9 9 10.5-3m0 6.553v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 1 1-.99-3.467l2.31-.66a2.25 2.25 0 0 0 1.632-2.163Zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 0 1-.99-3.467l2.31-.66A2.25 2.25 0 0 0 9 15.553Z" /></svg>`,
     title: 'Music',
@@ -48,12 +71,24 @@ const sections = [
 
   <div class="max-w-5xl mx-auto px-6 py-16">
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-      {sections.map((section) => (
+    <h2 class="text-xs font-semibold tracking-[0.15em] uppercase text-gray-500 mb-6">Following</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-14">
+      {following.map((item) => (
         <div class="border border-gray-700 bg-gray-800 rounded-xl p-8">
-          <div class="w-5 h-5 mb-5 text-gray-500" set:html={section.icon} />
-          <h2 class="text-base font-bold mb-3 text-white">{section.title}</h2>
-          <p class="text-gray-400 text-sm leading-relaxed">{section.body}</p>
+          <div class="w-5 h-5 mb-5 text-gray-500" set:html={item.icon} />
+          <h3 class="text-base font-bold mb-3 text-white">{item.title}</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">{item.body}</p>
+        </div>
+      ))}
+    </div>
+
+    <h2 class="text-xs font-semibold tracking-[0.15em] uppercase text-gray-500 mb-6 border-t border-gray-800 pt-10">Interests</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      {interests.map((item) => (
+        <div class="border border-gray-700 bg-gray-800 rounded-xl p-8">
+          <div class="w-5 h-5 mb-5 text-gray-500" set:html={item.icon} />
+          <h3 class="text-base font-bold mb-3 text-white">{item.title}</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">{item.body}</p>
         </div>
       ))}
     </div>
